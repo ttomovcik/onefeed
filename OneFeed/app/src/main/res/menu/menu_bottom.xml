@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.ttomovcik.onefeed.MainActivity">
+    tools:context="com.ttomovcik.onefeed.Activities.MainActivity">
     <item
         android:id="@+id/nav_home"
         android:icon="@drawable/ic_home_black_24dp"

@@ -1,9 +1,11 @@
-package com.ttomovcik.onefeed;
+package com.ttomovcik.onefeed.Activities;
 
 import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.ttomovcik.onefeed.R;
 
 public class MainActivity extends AppCompatActivity
 {
