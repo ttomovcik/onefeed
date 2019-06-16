@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">OneFeed</string>
-    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_feed">Feed</string>
+    <string name="menu_me">Me</string>
 </resources>
