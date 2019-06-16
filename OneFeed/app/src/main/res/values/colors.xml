@@ -17,5 +17,6 @@
     <color name="colorTextSecondary">#757575</color>
 
     <!-- Random UI elements -->
+    <color name="colorWindowBackground">#FAFAFA</color>
     <color name="colorDividers">#BDBDBD</color>
 </resources>

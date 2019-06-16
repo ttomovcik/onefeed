@@ -6,12 +6,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/appBarLayout"
-        android:background="?android:attr/windowBackground"
-        android:elevation="8dp">
+        android:id="@+id/toolbar"
+        android:background="@color/colorWindowBackground"
+        android:elevation="4dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -27,35 +27,19 @@
                 android:textColor="@color/colorTextPrimary"
                 android:textSize="30sp"
                 android:textStyle="bold" />
-
-            <!--
-                Secondary text, used for descriptions or easter eggs.
-                setToolbarDescription() will set visibility to VISIBLE
-                after changing text automatically.
-            -->
-            <TextView
-                android:id="@+id/tv_appTitleDescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_appTitle"
-                android:layout_alignStart="@id/tv_appTitle"
-                android:layout_marginTop="-8dp"
-                android:fontFamily="@font/raleway"
-                android:textColor="@color/colorTextSecondary"
-                android:textSize="18sp"
-                android:visibility="gone"/>
         </RelativeLayout>
 
-    </com.google.android.material.appbar.AppBarLayout>
+    </androidx.appcompat.widget.Toolbar>
 
     <ScrollView
         android:id="@+id/content_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/bottomNavigationView"
-        android:layout_below="@id/appBarLayout" />
+        android:layout_below="@id/toolbar" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        style="@style/Widget.MaterialComponents.BottomNavigationView"
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
