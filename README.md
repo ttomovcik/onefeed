@@ -30,6 +30,7 @@ This app is under **heavy development**. It (hopefully) will support social medi
 * Twitter
 * Instagram
 * ...and RSS feeds
+
 In the meanwhile, you can check out commits and see what's been already done!
 
 ## Contributing
