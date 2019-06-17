@@ -2,7 +2,6 @@ package com.ttomovcik.onefeed.Activities;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,13 +35,13 @@ public class MainActivity extends AppCompatActivity
                 {
                     case R.id.nav_home:
                         switchFragment(new Home());
-                        break;
+                        return true;
                     case R.id.nav_feed:
                         switchFragment(new Feed());
-                        break;
+                        return true;
                     case R.id.nav_me:
                         switchFragment(new Me());
-                        break;
+                        return true;
                 }
                 return false;
             }
