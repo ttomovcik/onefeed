@@ -13,10 +13,11 @@
     <color name="colorIconsDark">#000000</color>
 
     <!-- Text colours -->
-    <color name="colorTextPrimary">#202020</color>
+    <color name="colorTextPrimary">#FEFEFE</color>
     <color name="colorTextSecondary">#757575</color>
 
     <!-- Random UI elements -->
-    <color name="colorWindowBackground">#FAFAFA</color>
-    <color name="colorDividers">#BDBDBD</color>
+    <color name="colorWindowBackground">#000000</color>
+    <color name="colorHeaderBackground">#202020</color>
+    <color name="colorDividers">#757575</color>
 </resources>
