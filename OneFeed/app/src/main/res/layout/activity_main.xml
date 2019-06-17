@@ -6,37 +6,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Activities.MainActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/toolbar"
-        android:background="@color/colorWindowBackground"
-        android:elevation="4dp">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/tv_appTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:fontFamily="@font/raleway"
-                android:text="@string/app_name"
-                android:textColor="@color/colorTextPrimary"
-                android:textSize="30sp"
-                android:textStyle="bold" />
-        </RelativeLayout>
-
-    </androidx.appcompat.widget.Toolbar>
-
     <RelativeLayout
         android:id="@+id/content_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottomNavigationView"
-        android:layout_below="@id/toolbar" />
+        android:layout_above="@id/bottomNavigationView"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         style="@style/Widget.MaterialComponents.BottomNavigationView"

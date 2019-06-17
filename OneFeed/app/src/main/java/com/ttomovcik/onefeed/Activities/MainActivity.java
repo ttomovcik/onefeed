@@ -36,15 +36,12 @@ public class MainActivity extends AppCompatActivity
                 {
                     case R.id.nav_home:
                         switchFragment(new Home());
-                        setToolbarTitle(getString(R.string.menu_home));
                         break;
                     case R.id.nav_feed:
                         switchFragment(new Feed());
-                        setToolbarTitle(getString(R.string.menu_feed));
                         break;
                     case R.id.nav_me:
                         switchFragment(new Me());
-                        setToolbarTitle(getString(R.string.menu_me));
                         break;
                 }
                 return false;
@@ -56,18 +53,11 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void run()
             {
-                setToolbarTitle(getString(R.string.menu_home));
                 fragmentTransaction = getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.content_container, new Home());
                 fragmentTransaction.commit();
             }
         });
-    }
-
-    public void setToolbarTitle(String title)
-    {
-        TextView tvTitle = findViewById(R.id.tv_appTitle);
-        tvTitle.setText(title);
     }
 
     /**
