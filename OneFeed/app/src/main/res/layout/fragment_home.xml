@@ -7,17 +7,77 @@
 
     <!-- Header -->
     <RelativeLayout
+        android:id="@+id/rl_header"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:elevation="8dp">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:fontFamily="@font/raleway"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/raleway_bold"
+            android:textAlignment="center"
             android:text="@string/menu_home"
             android:textColor="@color/colorTextPrimary"
-            android:textSize="30sp" />
+            android:textSize="36sp" />
+    </RelativeLayout>
+
+    <!-- Weather information -->
+    <RelativeLayout
+        android:id="@+id/rl_weather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_header">
+
+        <TextView
+            android:id="@+id/tv_titleWeather"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="-16dp"
+            android:fontFamily="@font/raleway_bold"
+            android:text="@string/title_weather"
+            android:textAllCaps="true"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_weatherInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_titleWeather"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="@font/raleway"
+            android:text="@string/error_weather_noData"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_weatherLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_weatherInfo"
+            android:layout_alignStart="@id/tv_weatherInfo"
+            android:fontFamily="@font/raleway"
+            android:text="@string/error_weather_noLocation"
+            android:textColor="@color/colorTextSecondary" />
+
+        <ImageView
+            android:id="@+id/iv_weatherIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignTop="@id/tv_weatherInfo"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/ivDesc_weatherIcon"
+            android:src="@drawable/weather_none_available" />
     </RelativeLayout>
 
 </RelativeLayout>
