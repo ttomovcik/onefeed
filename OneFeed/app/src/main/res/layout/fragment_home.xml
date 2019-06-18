@@ -80,4 +80,23 @@
             android:src="@drawable/weather_none_available" />
     </RelativeLayout>
 
+    <!-- User overview -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/rl_weather">
+        <TextView
+            android:id="@+id/tv_titleAboutYou"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/raleway_bold"
+            android:text="@string/title_aboutYou"
+            android:textAllCaps="true"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
 </RelativeLayout>

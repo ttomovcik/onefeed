@@ -1,14 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragments.Me">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!-- Header -->
+    <RelativeLayout
+        android:id="@+id/rl_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorHeaderBackground">
+
+        <TextView
+            android:id="@+id/tv_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/raleway_bold"
+            android:text="@string/text_hiThere"
+            android:textAlignment="center"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="36sp" />
+
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_username"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/raleway_bold"
+            android:text="@string/text_auth_notSignedIn"
+            android:textAlignment="center"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="18sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_signInCreateAccount"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_email"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp"
+            android:text="@string/btn_signInCreateAccount" />
+    </RelativeLayout>
+
+    <com.google.android.material.navigation.NavigationView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_below="@id/rl_header"
+        android:background="@color/colorWindowBackground"
+        app:menu="@menu/menu_settings" />
 
-</FrameLayout>
+</RelativeLayout>

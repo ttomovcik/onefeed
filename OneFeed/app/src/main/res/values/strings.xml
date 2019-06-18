@@ -1,19 +1,42 @@
 <resources>
     <string name="app_name">OneFeed</string>
 
+    <!-- Menu items - BottomNavigationView -->
     <string name="menu_home">Home</string>
     <string name="menu_feed">Feed</string>
     <string name="menu_me">Me</string>
 
+    <!-- Menu items - Settings fragment (Me) -->
+    <string name="menu_aboutYou">ABOUT YOU</string>
+    <string name="menu_applicationSettings">APPLICATION SETTINGS</string>
+    <string name="menu_name">Name</string>
+    <string name="menu_profileImage">Profile image</string>
+    <string name="menu_accounts">Accounts</string>
+    <string name="menu_weather">Weather</string>
+    <string name="menu_sync">Sync</string>
+    <string name="menu_about">About OneFeed</string>
+    <string name="menu_advancedSettings">Advanced settings</string>
+
+    <string name="btn_signInCreateAccount">Sign in / Create account</string>
+
+    <!-- Warnings -->
     <string name="warn_featureInDev">This feature is currently in development.\nSorry about that.</string>
 
+    <!-- Error messages -->
     <string name="error_weather_noData">No weather data</string>
     <string name="error_weather_noLocation">No location set</string>
 
+    <!-- Descriptions for imageViews -->
     <string name="ivDesc_trashDove">Trash dove image</string>
     <string name="ivDesc_weatherIcon">Weather icon</string>
 
+    <!-- Titles -->
     <string name="title_weather">Weather</string>
+    <string name="title_aboutYou">About you</string>
+
+    <!-- Other UI texts -->
+    <string name="text_hiThere">Hi there!</string>
+    <string name="text_auth_notSignedIn">You are not signed in</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

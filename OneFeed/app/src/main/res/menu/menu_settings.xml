@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/menu_aboutYou">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/setting_name"
+                    android:icon="@drawable/ic_person_outline_white_24dp"
+                    android:title="@string/menu_name" />
+                <item
+                    android:id="@+id/settings_image"
+                    android:icon="@drawable/ic_center_focus_strong_white_24dp"
+                    android:title="@string/menu_profileImage" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/menu_applicationSettings">
+        <menu>
+            <item
+                android:id="@+id/setting_accounts"
+                android:icon="@drawable/ic_lock_outline_white_24dp"
+                android:title="@string/menu_accounts" />
+            <item
+                android:id="@+id/setting_weather"
+                android:icon="@drawable/ic_cloud_queue_white_24dp"
+                android:title="@string/menu_weather" />
+            <item
+                android:id="@+id/setting_sync"
+                android:icon="@drawable/ic_sync_white_24dp"
+                android:title="@string/menu_sync" />
+            <item
+                android:id="@+id/setting_aboutOneFeed"
+                android:icon="@drawable/ic_info_outline_white_24dp"
+                android:title="@string/menu_about" />
+            <item
+                android:id="@+id/setting_advanced"
+                android:icon="@drawable/ic_more_horiz_white_24dp"
+                android:title="@string/menu_advancedSettings" />
+
+        </menu>
+    </item>
+
+</menu>
