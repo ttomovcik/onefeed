@@ -82,9 +82,10 @@
 
     <!-- User overview -->
     <RelativeLayout
+        android:id="@+id/rl_aboutYou"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_below="@id/rl_weather">
         <TextView
             android:id="@+id/tv_titleAboutYou"
@@ -97,6 +98,68 @@
             android:textAllCaps="true"
             android:textColor="@color/colorTextPrimary"
             android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/iv_profileImage"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_below="@id/tv_titleAboutYou"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/menu_profileImage"
+            android:src="@drawable/ic_person_outline_white_24dp" />
+
+        <TextView
+            android:id="@+id/tv_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_titleAboutYou"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_toEndOf="@id/iv_profileImage"
+            android:fontFamily="@font/raleway"
+            android:text="@string/text_auth_notSignedIn"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_username"
+            android:layout_alignStart="@id/tv_username"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/text_home_changeUserInfo"
+            android:textColor="@color/colorTextSecondary" />
+    </RelativeLayout>
+
+    <!-- Recent people -->
+    <RelativeLayout
+        android:id="@+id/rl_recentPeople"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_aboutYou"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:id="@+id/tv_titleRecentPeople"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/raleway_bold"
+            android:text="@string/title_recentPeople"
+            android:textAllCaps="true"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:id="@+id/ll_people"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_titleRecentPeople"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal" />
     </RelativeLayout>
 
 </RelativeLayout>

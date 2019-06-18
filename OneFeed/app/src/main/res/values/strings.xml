@@ -17,7 +17,9 @@
     <string name="menu_about">About OneFeed</string>
     <string name="menu_advancedSettings">Advanced settings</string>
 
+    <!-- Buttons -->
     <string name="btn_signInCreateAccount">Sign in / Create account</string>
+    <string name="btn_viewAll">View all</string>
 
     <!-- Warnings -->
     <string name="warn_featureInDev">This feature is currently in development.\nSorry about that.</string>
@@ -33,10 +35,12 @@
     <!-- Titles -->
     <string name="title_weather">Weather</string>
     <string name="title_aboutYou">About you</string>
+    <string name="title_recentPeople">Recent people</string>
 
     <!-- Other UI texts -->
     <string name="text_hiThere">Hi there!</string>
     <string name="text_auth_notSignedIn">You are not signed in</string>
+    <string name="text_home_changeUserInfo">Head over to settings to change your name and photo or to sign in / create account</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
