@@ -6,9 +6,9 @@
     <color name="colorAccent">#FF4081</color>
 
     <!-- Text, dividers, icons -->
-    <color name="colorTextPrimary">#212121</color>
+    <color name="colorTextPrimary">#FAFAFA</color>
     <color name="colorTextSecondary">#757575</color>
     <color name="colorDividers">#BDBDBD</color>
-    <color name="colorIcons">#000000</color>
-    <color name="colorFabIcon">#FFFFFF</color>
+    <color name="colorIcons">#FFFFFF</color>
+    <color name="colorFabIcon">#ECECEC</color>
 </resources>
