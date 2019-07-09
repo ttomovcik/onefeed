@@ -9,6 +9,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:statusBarColor">?android:attr/windowBackground</item>
+        <item name="android:navigationBarColor">?android:attr/windowBackground</item>
 
         <!-- New MaterialComponents attributes. -->
         <item name="scrimBackground">@color/mtrl_scrim_color</item>

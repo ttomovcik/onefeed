@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity
     * TODO (4): Profile UI -> Store name and photo
     * TODO (5): Add Google Firebase for backup
     * TODO (6): Add Crashlytics
+    * TODO (7): Prolly add ButterKnife
     */
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener

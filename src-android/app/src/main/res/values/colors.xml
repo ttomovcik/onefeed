@@ -9,6 +9,7 @@
     <color name="colorTextPrimary">#212121</color>
     <color name="colorTextSecondary">#757575</color>
     <color name="colorDividers">#BDBDBD</color>
+    <color name="colorWindowBackground">#F3F3F3</color>
     <color name="colorIcons">#000000</color>
     <color name="colorFabIcon">#FFFFFF</color>
 </resources>

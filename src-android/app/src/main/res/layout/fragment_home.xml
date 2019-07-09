@@ -19,48 +19,120 @@
         android:textSize="36sp" />
 
     <!-- Profile information -->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_profile"
+    <RelativeLayout
+        android:id="@+id/rl_aboutYou"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_title"
-        android:layout_margin="16dp">
+        android:layout_marginBottom="24dp"
+        android:paddingStart="16dp">
+
+        <TextView
+            android:id="@+id/tv_titleAboutYou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="About you"
+            android:textColor="@color/colorTextSecondary" />
 
         <ImageView
-            android:id="@+id/iv_profileImage"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:scaleType="centerCrop"
-            android:tint="@color/colorIcons"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_person_outline_black_24dp"
-            tools:ignore="ContentDescription" />
+            android:id="@+id/iv_aboutYou_profilePicture"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_below="@id/tv_titleAboutYou"
+            android:layout_marginEnd="16dp"
+            android:src="@mipmap/ic_launcher"
+            tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/tv_profileName"
-            android:layout_width="match_parent"
+            android:id="@+id/tv_aboutYou_profileName"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignTop="@id/iv_aboutYou_profilePicture"
+            android:layout_toEndOf="@id/iv_aboutYou_profilePicture"
             android:fontFamily="@font/poppins_medium"
-            android:text="You are not signed in"
-            android:textAlignment="center"
+            android:text="Lorem ipsum"
             android:textColor="@color/colorTextPrimary"
-            android:textSize="24sp"
-            app:layout_constraintTop_toBottomOf="@+id/iv_profileImage" />
+            android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/tv_profileWelcomeMessage"
+            android:id="@+id/tv_aboutYou_profileEmailAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_aboutYou_profileName"
+            android:layout_alignStart="@id/tv_aboutYou_profileName"
+            android:fontFamily="@font/poppins"
+            android:text="Na východe nič nie je"
+            android:textColor="@color/colorTextSecondary" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_connectedAccounts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_aboutYou"
+        android:layout_marginBottom="16dp"
+        android:paddingStart="16dp">
+
+        <TextView
+            android:id="@+id/tv_titleConnectedAccounts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Connected accounts"
+            android:textColor="@color/colorTextSecondary" />
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
-            android:text="Tap here or go to settings to change your profile information or sign in."
-            android:textAlignment="center"
-            android:textColor="@color/colorTextSecondary"
-            android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@+id/tv_profileName" />
+            android:layout_below="@id/tv_titleConnectedAccounts"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:orientation="vertical">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:drawableTop="@drawable/ic_info_outline_black_24dp"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/colorIcons"
+                android:focusable="true"
+                android:fontFamily="@font/poppins"
+                android:text="No accounts connected"
+                android:textAllCaps="false"
+                android:textColor="@color/colorTextPrimary"
+                tools:targetApi="m" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:text="tap here if you want to connect new accounts"
+                android:textColor="@color/colorTextSecondary" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_troubleshooting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_connectedAccounts"
+        android:paddingStart="16dp">
+
+        <TextView
+            android:id="@+id/tv_titleTroubleshooting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Troubleshooting"
+            android:textColor="@color/colorTextSecondary" />
+
+
+    </RelativeLayout>
 </RelativeLayout>
