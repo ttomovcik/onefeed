@@ -21,6 +21,15 @@ public class MainActivity extends AppCompatActivity
     FragmentTransaction fragmentTransaction;
     BottomNavigationView bottomNavigationView;
 
+    /*
+    * TODO (1): Finish home UI - show profile image and info, connected accounts - read cookies?
+    * TODO (2): Add webView into feed with SMSwitcher
+    * TODO (3): Options -> Dark theme switcher dialog thingy
+    * TODO (4): Profile UI -> Store name and photo
+    * TODO (5): Add Google Firebase for backup
+    * TODO (6): Add Crashlytics
+    */
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener()
     {
