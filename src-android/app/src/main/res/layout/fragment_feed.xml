@@ -74,7 +74,8 @@
             android:focusable="true"
             android:text="@string/social_reddit"
             android:textAllCaps="false"
-            android:textColor="@color/colorTextPrimary" />
+            android:textColor="@color/colorTextPrimary"
+            tools:targetApi="m" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/acb_devrant"
@@ -88,7 +89,8 @@
             android:focusable="true"
             android:text="@string/social_devRant"
             android:textAllCaps="false"
-            android:textColor="@color/colorTextPrimary" />
+            android:textColor="@color/colorTextPrimary"
+            tools:targetApi="m" />
 
     </com.google.android.flexbox.FlexboxLayout>
 
