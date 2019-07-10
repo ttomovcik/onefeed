@@ -8,6 +8,7 @@
     <!-- Text, dividers, icons -->
     <color name="colorTextPrimary">#FAFAFA</color>
     <color name="colorTextSecondary">#757575</color>
+    <color name="colorWindowBackground">#212121</color>
     <color name="colorDividers">#BDBDBD</color>
     <color name="colorIcons">#FFFFFF</color>
     <color name="colorFabIcon">#ECECEC</color>
