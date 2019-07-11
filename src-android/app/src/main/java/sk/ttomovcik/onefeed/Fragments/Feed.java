@@ -11,14 +11,13 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 
 import java.util.Objects;
 
 import sk.ttomovcik.onefeed.R;
 
-public class Feed extends Fragment implements View.OnClickListener
+public class Feed extends Fragment
 {
     private WebView wv_feed;
 
@@ -42,17 +41,7 @@ public class Feed extends Fragment implements View.OnClickListener
                 Configuration.UI_MODE_NIGHT_MASK;
 
         // Find views
-        AppCompatButton acb_facebook = view.findViewById(R.id.acb_facebook);
-        AppCompatButton acb_twitter = view.findViewById(R.id.acb_twitter);
-        AppCompatButton acb_reddit = view.findViewById(R.id.acb_reddit);
-        AppCompatButton acb_devrant = view.findViewById(R.id.acb_devrant);
         wv_feed = view.findViewById(R.id.wv_feed);
-
-        // Set OnclickListeners
-        acb_facebook.setOnClickListener(this);
-        acb_twitter.setOnClickListener(this);
-        acb_reddit.setOnClickListener(this);
-        acb_devrant.setOnClickListener(this);
 
         // Prepare webView
         wv_feed.getSettings().setDomStorageEnabled(true);
@@ -103,29 +92,5 @@ public class Feed extends Fragment implements View.OnClickListener
             }
         }
         return CookieValue;
-    }
-
-    @Override
-    public void onClick(View view)
-    {
-        String URL_SOCIAL_FACEBOOK = "https://www.facebook.com";
-        String URL_SOCIAL_TWITTER = "https://www.twitter.com";
-        String URL_SOCIAL_REDDIT = "https://www.reddit.com";
-        String URL_SOCIAL_DEVRANT = "https://www.devrant.com/";
-        switch (view.getId())
-        {
-            case R.id.acb_facebook:
-                wv_feed.loadUrl(URL_SOCIAL_FACEBOOK);
-                break;
-            case R.id.acb_twitter:
-                wv_feed.loadUrl(URL_SOCIAL_TWITTER);
-                break;
-            case R.id.acb_reddit:
-                wv_feed.loadUrl(URL_SOCIAL_REDDIT);
-                break;
-            case R.id.acb_devrant:
-                wv_feed.loadUrl(URL_SOCIAL_DEVRANT);
-                break;
-        }
     }
 }

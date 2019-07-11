@@ -18,88 +18,90 @@
         android:textColor="@color/colorTextPrimary"
         android:textSize="36sp" />
 
-    <com.google.android.flexbox.FlexboxLayout
-        android:id="@+id/fl_accounts"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_title"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:foregroundGravity="center_horizontal"
-        app:alignContent="center"
-        app:flexDirection="row"
-        app:flexWrap="wrap"
-        app:justifyContent="space_between">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/acb_facebook"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:drawableTop="@drawable/ic_cloud_off_black_24dp"
-            android:drawablePadding="8dp"
-            android:drawableTint="@color/colorIcons"
-            android:focusable="true"
-            android:text="@string/social_facebook"
-            android:textAllCaps="false"
-            android:textColor="@color/colorTextPrimary"
-            tools:targetApi="m" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/acb_twitter"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:drawableTop="@drawable/ic_cloud_off_black_24dp"
-            android:drawablePadding="8dp"
-            android:drawableTint="@color/colorIcons"
-            android:focusable="true"
-            android:text="@string/social_twitter"
-            android:textAllCaps="false"
-            android:textColor="@color/colorTextPrimary"
-            tools:targetApi="m" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/acb_reddit"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:drawableTop="@drawable/ic_cloud_off_black_24dp"
-            android:drawablePadding="8dp"
-            android:drawableTint="@color/colorIcons"
-            android:focusable="true"
-            android:text="@string/social_reddit"
-            android:textAllCaps="false"
-            android:textColor="@color/colorTextPrimary"
-            tools:targetApi="m" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/acb_devrant"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:drawableTop="@drawable/ic_cloud_off_black_24dp"
-            android:drawablePadding="8dp"
-            android:drawableTint="@color/colorIcons"
-            android:focusable="true"
-            android:text="@string/social_devRant"
-            android:textAllCaps="false"
-            android:textColor="@color/colorTextPrimary"
-            tools:targetApi="m" />
-
-    </com.google.android.flexbox.FlexboxLayout>
-
     <WebView
         android:id="@+id/wv_feed"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/fl_accounts"
+        android:layout_below="@id/tv_title"
         android:scrollbars="none"
         android:visibility="gone" />
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        app:menu_animationDelayPerItem="10"
+        app:menu_backgroundColor="@android:color/transparent"
+        app:menu_buttonSpacing="4dp"
+        app:menu_colorNormal="@color/colorPrimary"
+        app:menu_colorPressed="@color/colorPrimaryLight"
+        app:menu_colorRipple="@color/colorFabIcon"
+        app:menu_fab_label="@string/fab_title_switchSite"
+        app:menu_fab_size="normal"
+        app:menu_icon="@drawable/ic_swap_horiz_white_24dp"
+        app:menu_labels_cornerRadius="3dp"
+        app:menu_labels_ellipsize="none"
+        app:menu_labels_hideAnimation="@anim/fab_scale_down"
+        app:menu_labels_margin="0dp"
+        app:menu_labels_maxLines="-1"
+        app:menu_labels_padding="4dp"
+        app:menu_labels_paddingBottom="4dp"
+        app:menu_labels_paddingLeft="8dp"
+        app:menu_labels_paddingRight="8dp"
+        app:menu_labels_paddingTop="4dp"
+        app:menu_labels_position="left"
+        app:menu_labels_showAnimation="@anim/fab_scale_up"
+        app:menu_labels_showShadow="true"
+        app:menu_labels_singleLine="false"
+        app:menu_openDirection="up"
+        app:menu_shadowRadius="4dp"
+        app:menu_shadowXOffset="1dp"
+        app:menu_shadowYOffset="3dp"
+        app:menu_showShadow="true">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_looks_4_white_24dp"
+            app:fab_colorNormal="@color/colorPrimary"
+            app:fab_colorPressed="@color/colorPrimaryLight"
+            app:fab_colorRipple="@color/colorFabIcon"
+            app:fab_label="@string/social_devRant"
+            app:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_looks_3_white_24dp"
+            app:fab_colorNormal="@color/colorPrimary"
+            app:fab_colorPressed="@color/colorPrimaryLight"
+            app:fab_colorRipple="@color/colorFabIcon"
+            app:fab_label="@string/social_reddit"
+            app:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_looks_two_white_24dp"
+            app:fab_colorNormal="@color/colorPrimary"
+            app:fab_colorPressed="@color/colorPrimaryLight"
+            app:fab_colorRipple="@color/colorFabIcon"
+            app:fab_label="@string/social_twitter"
+            app:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_looks_one_white_24dp"
+            app:fab_colorNormal="@color/colorPrimary"
+            app:fab_colorPressed="@color/colorPrimaryLight"
+            app:fab_colorRipple="@color/colorFabIcon"
+            app:fab_label="@string/social_facebook"
+            app:fab_size="mini" />
+
+    </com.github.clans.fab.FloatingActionMenu>
 
 </RelativeLayout>

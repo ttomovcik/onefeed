@@ -230,7 +230,7 @@
                 android:clickable="true"
                 android:drawableTop="@drawable/ic_help_outline_black_24dp"
                 android:drawablePadding="8dp"
-                android:drawableTint="@color/colorPrimary"
+                android:drawableTint="@color/colorIcons"
                 android:focusable="true"
                 android:text="@string/btn_help_help"
                 android:textAllCaps="false"

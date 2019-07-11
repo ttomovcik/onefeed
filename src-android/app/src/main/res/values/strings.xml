@@ -4,6 +4,7 @@
     <string name="btn_help_connectingAccounts">Connecting accounts</string>
     <string name="btn_help_appCrash">App crashing</string>
     <string name="btn_help_help">Help</string>
+    <string name="fab_title_switchSite">Switch site</string>
 
     <string name="contentDescription_image">Image</string>
 
