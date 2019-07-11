@@ -22,8 +22,8 @@
         android:id="@+id/rv_toggleTheme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:layout_below="@id/tv_title"
+        android:layout_marginTop="16dp"
         android:padding="8dp"
         app:rv_alpha="200"
         app:rv_color="@color/colorTextPrimary"
@@ -55,8 +55,8 @@
         android:id="@+id/rv_moreSettings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:layout_below="@id/rv_toggleTheme"
+        android:layout_marginTop="16dp"
         android:padding="8dp"
         app:rv_alpha="200"
         app:rv_color="@color/colorTextPrimary"
@@ -82,5 +82,23 @@
                 android:textColor="@color/colorTextSecondary" />
         </RelativeLayout>
     </com.andexert.library.RippleView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="4dp"
+        android:layout_below="@id/rv_moreSettings"
+        android:background="@color/colorDividers" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rv_moreSettings"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/help_settings_reset"
+        android:textColor="@color/colorTextSecondary" />
 
 </RelativeLayout>

@@ -4,8 +4,11 @@
     <string name="btn_help_connectingAccounts">Connecting accounts</string>
     <string name="btn_help_appCrash">App crashing</string>
     <string name="btn_help_help">Help</string>
+    <string name="fab_title_switchSite">Switch site</string>
 
     <string name="contentDescription_image">Image</string>
+
+    <string name="help_settings_reset">If you somehow manage to break some settings or this app just straight-on stops working, head over to your system settings -> Applications -> OneFeed and clear data. You\'ll have to log in to your accounts tho. Happy tweaking</string>
 
     <string name="title_home">Home</string>
     <string name="title_feed">Feed</string>
