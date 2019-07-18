@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">OneFeed</string>
 
-    <string name="btn_help_connectingAccounts">Connecting accounts</string>
+    <string name="btn_help_connectingAccounts">Accounts</string>
     <string name="btn_help_appCrash">App crashing</string>
     <string name="btn_help_help">Help</string>
     <string name="fab_title_switchSite">Switch site</string>
@@ -17,17 +17,13 @@
     <string name="title_settings_theme">Application theme</string>
     <string name="title_settings_more">More settings</string>
     <string name="title_cat_aboutYou">About you</string>
-    <string name="title_cat_connectedAccounts">Connected accounts</string>
     <string name="title_cat_troubleshooting">Troubleshooting</string>
     <string name="title_welcomeMsg_hiThere">Hi there!</string>
+
+    <string name="title_dialog_toggleSite">Switch sites</string>
 
     <string name="subtitle_settings_theme">Quickly change to dark / light theme</string>
     <string name="subtitle_settings_more">More advanced settings, please don\'t mess this up.</string>
     <string name="subtitle_welcomeMsg_notSignedIn">You are not signed in</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
-    <string name="social_facebook">Facebook</string>
-    <string name="social_twitter">Twitter</string>
-    <string name="social_reddit">Reddit</string>
-    <string name="social_devRant">Devrant</string>
 </resources>

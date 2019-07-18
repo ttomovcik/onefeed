@@ -1,6 +1,8 @@
 package sk.ttomovcik.onefeed.Fragments;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,9 +11,12 @@ import android.view.ViewGroup;
 import android.webkit.CookieManager;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.Objects;
 
@@ -20,6 +25,28 @@ import sk.ttomovcik.onefeed.R;
 public class Feed extends Fragment
 {
     private WebView wv_feed;
+    private String[] socialNetworks =
+            {
+                    "4chan",
+                    "Facebook",
+                    "Instagram",
+                    "Pinterest",
+                    "Tumlbr",
+                    "Twitter",
+                    "Reddit",
+                    "VK"
+            };
+    private String[] socialNetworkUrls =
+            {
+                    "https://www.boards.4chan.org/",
+                    "https://www.facebook.com/",
+                    "https://www.instagram.com/",
+                    "https://www.pinterest.com/",
+                    "https://www.tumblr.com/",
+                    "https://www.twitter.com",
+                    "https://www.reddit.com/",
+                    "https://www.vk.com/"
+            };
 
     public Feed()
     {
@@ -42,6 +69,9 @@ public class Feed extends Fragment
 
         // Find views
         wv_feed = view.findViewById(R.id.wv_feed);
+        FloatingActionButton fab_toggleSite = view.findViewById(R.id.fab_toggleSite);
+        final TextView tv_title = view.findViewById(R.id.tv_title);
+        tv_title.setText(getString(R.string.title_feed));
 
         // Prepare webView
         wv_feed.getSettings().setDomStorageEnabled(true);
@@ -52,14 +82,7 @@ public class Feed extends Fragment
         {
             public void onPageFinished(WebView view, String url)
             {
-                Objects.requireNonNull(getActivity()).runOnUiThread(new Runnable()
-                {
-                    @Override
-                    public void run()
-                    {
-                        wv_feed.setVisibility(View.VISIBLE);
-                    }
-                });
+                wv_feed.setVisibility(View.VISIBLE);
             }
         });
         if (nightModeFlags == Configuration.UI_MODE_NIGHT_YES)
@@ -68,6 +91,60 @@ public class Feed extends Fragment
                     "text/html", "UTF-8");
         }
         setRetainInstance(true);
+
+        fab_toggleSite.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                builder.setTitle(getString(R.string.title_dialog_toggleSite));
+                builder.setItems(socialNetworks, new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        switch (which)
+                        {
+                            case 0: // 4chan
+                                tv_title.setText(socialNetworks[0]);
+                                wv_feed.loadUrl(socialNetworkUrls[0]);
+                                break;
+                            case 1: // Facebook
+                                tv_title.setText(socialNetworks[1]);
+                                wv_feed.loadUrl(socialNetworkUrls[1]);
+                                break;
+                            case 2: // Instagram
+                                tv_title.setText(socialNetworks[2]);
+                                wv_feed.loadUrl(socialNetworkUrls[2]);
+                                break;
+                            case 3: // Pinterest
+                                tv_title.setText(socialNetworks[3]);
+                                wv_feed.loadUrl(socialNetworkUrls[3]);
+                                break;
+                            case 4: // Tumblr
+                                tv_title.setText(socialNetworks[4]);
+                                wv_feed.loadUrl(socialNetworkUrls[4]);
+                                break;
+                            case 5: // Twitter
+                                tv_title.setText(socialNetworks[5]);
+                                wv_feed.loadUrl(socialNetworkUrls[5]);
+                                break;
+                            case 6: // Reddit
+                                tv_title.setText(socialNetworks[6]);
+                                wv_feed.loadUrl(socialNetworkUrls[6]);
+                                break;
+                            case 7: // Vk
+                                tv_title.setText(socialNetworks[7]);
+                                wv_feed.loadUrl(socialNetworkUrls[7]);
+                                break;
+                        }
+                    }
+                });
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        });
         return view;
     }
 

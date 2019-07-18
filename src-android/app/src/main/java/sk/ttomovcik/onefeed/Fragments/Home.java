@@ -17,10 +17,6 @@ import sk.ttomovcik.onefeed.R;
 public class Home extends Fragment
 {
     private AppCompatButton
-            acb_social_facebook,
-            acb_social_twitter,
-            acb_social_reddit,
-            acb_social_devrant,
             acb_help_help,
             acb_help_appCrash,
             acb_help_connectingAccounts;
@@ -36,10 +32,6 @@ public class Home extends Fragment
                              Bundle savedInstanceState)
     {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        acb_social_facebook = view.findViewById(R.id.acb_social_facebook);
-        acb_social_twitter = view.findViewById(R.id.acb_social_twitter);
-        acb_social_reddit = view.findViewById(R.id.acb_social_reddit);
-        acb_social_devrant = view.findViewById(R.id.acb_social_devrant);
         acb_help_appCrash = view.findViewById(R.id.acb_help_appCrash);
         acb_help_connectingAccounts = view.findViewById(R.id.acb_help_connectingAccounts);
         acb_help_help = view.findViewById(R.id.acb_help_help);
@@ -49,38 +41,6 @@ public class Home extends Fragment
 
     private void setOnclickListeners()
     {
-        acb_social_facebook.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                // Switch fragment to Feed with extra -> targetSN
-            }
-        });
-        acb_social_twitter.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                // Switch fragment to Feed with extra -> targetSN
-            }
-        });
-        acb_social_reddit.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                // Switch fragment to Feed with extra -> targetSN
-            }
-        });
-        acb_social_devrant.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                // Switch fragment to Feed with extra -> targetSN
-            }
-        });
         acb_help_help.setOnClickListener(new View.OnClickListener()
         {
             @Override
