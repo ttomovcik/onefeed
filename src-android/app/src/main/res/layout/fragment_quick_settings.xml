@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.QuickSettings">
+
+    <!-- Header -->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/title_settings"
+        android:textAlignment="center"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="36sp" />
+
+    <RelativeLayout
+        android:id="@+id/rl_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:id="@+id/iv_settings"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_settings_24dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_settings"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/poppins"
+            android:foregroundTint="@color/colorTextSecondary"
+            android:text="@string/text_settings_quickSettingsInfo"
+            android:textAlignment="center"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_description"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:flexDirection="row"
+            app:justifyContent="space_evenly">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/acb_appTheme"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:drawableTop="@drawable/ic_color_lens_black_24dp"
+                android:drawablePadding="8dp"
+                android:focusable="true"
+                android:fontFamily="@font/poppins"
+                android:text="@string/title_settings_theme"
+                android:textColor="@color/colorTextPrimary" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/acb_help"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:drawableTop="@drawable/ic_help_outline_black_24dp"
+                android:drawablePadding="8dp"
+                android:focusable="true"
+                android:fontFamily="@font/poppins"
+                android:text="@string/btn_help_help"
+                android:textColor="@color/colorTextPrimary" />
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_advancedSettings"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/btn_settings_advanced"
+            android:textAllCaps="false"
+            android:textColor="@color/colorTextSecondary" />
+    </LinearLayout>
+</RelativeLayout>

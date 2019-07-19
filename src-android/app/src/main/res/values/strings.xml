@@ -4,11 +4,10 @@
     <string name="btn_help_connectingAccounts">Accounts</string>
     <string name="btn_help_appCrash">App crashing</string>
     <string name="btn_help_help">Help</string>
+    <string name="btn_settings_advanced">Advanced settings</string>
     <string name="fab_title_switchSite">Switch site</string>
 
     <string name="contentDescription_image">Image</string>
-
-    <string name="help_settings_reset">If you somehow manage to break some settings or this app just straight-on stops working, head over to your system settings -> Applications -> OneFeed and clear data. You\'ll have to log in to your accounts tho. Happy tweaking</string>
 
     <string name="title_home">Home</string>
     <string name="title_feed">Feed</string>
@@ -22,8 +21,26 @@
 
     <string name="title_dialog_toggleSite">Switch sites</string>
 
-    <string name="subtitle_settings_theme">Quickly change to dark / light theme</string>
-    <string name="subtitle_settings_more">More advanced settings, please don\'t mess this up.</string>
-    <string name="subtitle_welcomeMsg_notSignedIn">You are not signed in</string>
+    <string name="subtitle_welcomeMsg_changeName">Tap here to change your profile settings</string>
+    <string name="text_settings_quickSettingsInfo">Here you can quickly change basic settings like app theme. For more advanced stuff, tap the "advanced settings" button</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles - categories -->
+    <string name="pref_title_cat_aboutYou">About you</string>
+    <string name="pref_title_cat_feed">Feed</string>
+    <string name="pref_title_cat_application">Application settings</string>
+
+    <!-- Preference titles - items -->
+    <string name="pref_title_item_signIn">Sign in</string>
+    <string name="pref_title_item_name">Name</string>
+    <string name="pref_title_item_name_dialogTitle">Hi, my name is</string>
+    <string name="pref_title_item_image">Profile image</string>
+    <string name="pref_title_item_appTheme">Application theme</string>
+
+    <!-- Preference descriptions -->
+    <string name="pref_desc_item_signIn">Sign in to enable sync and auto-login to social networks on other devices</string>
+    <string name="pref_desc_item_name">What should we call you</string>
+    <string name="pref_desc_item_image">Image will be displayed in home screen</string>
+    <string name="pref_desc_item_appTheme">Toggle light / dark theme</string>
 </resources>

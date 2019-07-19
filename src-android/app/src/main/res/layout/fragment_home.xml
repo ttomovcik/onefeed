@@ -65,7 +65,7 @@
             android:layout_below="@id/tv_aboutYou_profileName"
             android:layout_alignStart="@id/tv_aboutYou_profileName"
             android:fontFamily="@font/poppins"
-            android:text="@string/subtitle_welcomeMsg_notSignedIn"
+            android:text="@string/subtitle_welcomeMsg_changeName"
             android:textColor="@color/colorTextSecondary" />
     </RelativeLayout>
 
