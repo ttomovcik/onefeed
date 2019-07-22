@@ -65,107 +65,15 @@
             android:layout_below="@id/tv_aboutYou_profileName"
             android:layout_alignStart="@id/tv_aboutYou_profileName"
             android:fontFamily="@font/poppins"
-            android:text="@string/subtitle_welcomeMsg_notSignedIn"
+            android:text="@string/subtitle_welcomeMsg_changeName"
             android:textColor="@color/colorTextSecondary" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/rl_connectedAccounts"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rl_aboutYou"
-        android:layout_marginBottom="16dp"
-        android:paddingStart="16dp"
-        tools:ignore="RtlSymmetry">
-
-        <TextView
-            android:id="@+id/tv_titleConnectedAccounts"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:fontFamily="@font/poppins_medium"
-            android:text="@string/title_cat_connectedAccounts"
-            android:textColor="@color/colorTextSecondary" />
-
-        <com.google.android.flexbox.FlexboxLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_titleConnectedAccounts"
-            android:layout_marginEnd="16dp"
-            android:foregroundGravity="center_horizontal"
-            app:alignContent="center"
-            app:flexDirection="row"
-            app:flexWrap="wrap"
-            app:justifyContent="space_between">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/acb_social_facebook"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:drawableTop="@drawable/ic_cloud_off_black_24dp"
-                android:drawablePadding="8dp"
-                android:drawableTint="@color/colorIcons"
-                android:focusable="true"
-                android:text="@string/social_facebook"
-                android:textAllCaps="false"
-                android:textColor="@color/colorTextPrimary"
-                tools:targetApi="m" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/acb_social_twitter"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:drawableTop="@drawable/ic_cloud_off_black_24dp"
-                android:drawablePadding="8dp"
-                android:drawableTint="@color/colorIcons"
-                android:focusable="true"
-                android:text="@string/social_twitter"
-                android:textAllCaps="false"
-                android:textColor="@color/colorTextPrimary"
-                tools:targetApi="m" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/acb_social_reddit"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:drawableTop="@drawable/ic_cloud_off_black_24dp"
-                android:drawablePadding="8dp"
-                android:drawableTint="@color/colorIcons"
-                android:focusable="true"
-                android:text="@string/social_reddit"
-                android:textAllCaps="false"
-                android:textColor="@color/colorTextPrimary"
-                tools:targetApi="m" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/acb_social_devrant"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:drawableTop="@drawable/ic_cloud_off_black_24dp"
-                android:drawablePadding="8dp"
-                android:drawableTint="@color/colorIcons"
-                android:focusable="true"
-                android:text="@string/social_devRant"
-                android:textAllCaps="false"
-                android:textColor="@color/colorTextPrimary"
-                tools:targetApi="m" />
-
-        </com.google.android.flexbox.FlexboxLayout>
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/rl_troubleshooting"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rl_connectedAccounts"
+        android:layout_below="@id/rl_aboutYou"
         android:paddingStart="16dp"
         tools:ignore="RtlSymmetry">
 
