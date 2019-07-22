@@ -2,7 +2,6 @@ package sk.ttomovcik.onefeed.Fragments;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -92,58 +91,50 @@ public class Feed extends Fragment
         }
         setRetainInstance(true);
 
-        fab_toggleSite.setOnClickListener(new View.OnClickListener()
+        fab_toggleSite.setOnClickListener(view1 ->
         {
-            @Override
-            public void onClick(View view)
+            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+            builder.setTitle(getString(R.string.title_dialog_toggleSite));
+            builder.setItems(socialNetworks, (dialog, which) ->
             {
-                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                builder.setTitle(getString(R.string.title_dialog_toggleSite));
-                builder.setItems(socialNetworks, new DialogInterface.OnClickListener()
+                switch (which)
                 {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which)
-                    {
-                        switch (which)
-                        {
-                            case 0: // 4chan
-                                tv_title.setText(socialNetworks[0]);
-                                wv_feed.loadUrl(socialNetworkUrls[0]);
-                                break;
-                            case 1: // Facebook
-                                tv_title.setText(socialNetworks[1]);
-                                wv_feed.loadUrl(socialNetworkUrls[1]);
-                                break;
-                            case 2: // Instagram
-                                tv_title.setText(socialNetworks[2]);
-                                wv_feed.loadUrl(socialNetworkUrls[2]);
-                                break;
-                            case 3: // Pinterest
-                                tv_title.setText(socialNetworks[3]);
-                                wv_feed.loadUrl(socialNetworkUrls[3]);
-                                break;
-                            case 4: // Tumblr
-                                tv_title.setText(socialNetworks[4]);
-                                wv_feed.loadUrl(socialNetworkUrls[4]);
-                                break;
-                            case 5: // Twitter
-                                tv_title.setText(socialNetworks[5]);
-                                wv_feed.loadUrl(socialNetworkUrls[5]);
-                                break;
-                            case 6: // Reddit
-                                tv_title.setText(socialNetworks[6]);
-                                wv_feed.loadUrl(socialNetworkUrls[6]);
-                                break;
-                            case 7: // Vk
-                                tv_title.setText(socialNetworks[7]);
-                                wv_feed.loadUrl(socialNetworkUrls[7]);
-                                break;
-                        }
-                    }
-                });
-                AlertDialog dialog = builder.create();
-                dialog.show();
-            }
+                    case 0:
+                        tv_title.setText(socialNetworks[0]);
+                        wv_feed.loadUrl(socialNetworkUrls[0]);
+                        break;
+                    case 1:
+                        tv_title.setText(socialNetworks[1]);
+                        wv_feed.loadUrl(socialNetworkUrls[1]);
+                        break;
+                    case 2:
+                        tv_title.setText(socialNetworks[2]);
+                        wv_feed.loadUrl(socialNetworkUrls[2]);
+                        break;
+                    case 3:
+                        tv_title.setText(socialNetworks[3]);
+                        wv_feed.loadUrl(socialNetworkUrls[3]);
+                        break;
+                    case 4:
+                        tv_title.setText(socialNetworks[4]);
+                        wv_feed.loadUrl(socialNetworkUrls[4]);
+                        break;
+                    case 5:
+                        tv_title.setText(socialNetworks[5]);
+                        wv_feed.loadUrl(socialNetworkUrls[5]);
+                        break;
+                    case 6:
+                        tv_title.setText(socialNetworks[6]);
+                        wv_feed.loadUrl(socialNetworkUrls[6]);
+                        break;
+                    case 7:
+                        tv_title.setText(socialNetworks[7]);
+                        wv_feed.loadUrl(socialNetworkUrls[7]);
+                        break;
+                }
+            });
+            AlertDialog dialog = builder.create();
+            dialog.show();
         });
         return view;
     }
