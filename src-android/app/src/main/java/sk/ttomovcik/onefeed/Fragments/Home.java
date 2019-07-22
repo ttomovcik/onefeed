@@ -3,9 +3,9 @@ package sk.ttomovcik.onefeed.Fragments;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +22,7 @@ import java.util.Objects;
 import sk.ttomovcik.onefeed.Activities.Settings;
 import sk.ttomovcik.onefeed.R;
 
+@SuppressWarnings("ConstantConditions")
 public class Home extends Fragment
 {
     private AppCompatButton
@@ -31,10 +32,6 @@ public class Home extends Fragment
     private TextView
             tv_aboutYou_profileName,
             tv_aboutYou_profileHelpMessage;
-    private String
-            profileName,
-            profilePicturePath;
-    private ImageView iv_aboutYou_profilePicture;
     private SharedPreferences sharedPreferences;
 
     public Home()
@@ -56,7 +53,7 @@ public class Home extends Fragment
         acb_help_help = view.findViewById(R.id.acb_help_help);
         tv_aboutYou_profileName = view.findViewById(R.id.tv_aboutYou_profileName);
         tv_aboutYou_profileHelpMessage = view.findViewById(R.id.tv_aboutYou_profileHelpMessage);
-        iv_aboutYou_profilePicture = view.findViewById(R.id.iv_aboutYou_profilePicture);
+        ImageView iv_aboutYou_profilePicture = view.findViewById(R.id.iv_aboutYou_profilePicture);
         getProfileInformation();
         setOnclickListeners();
         return view;
@@ -68,9 +65,16 @@ public class Home extends Fragment
          *   If the user has saved name, change text from tap here to change settings to:
          *   "idk, something". TODO: Add helpful message or QoTD.
          */
-        profileName = sharedPreferences.getString("profileName", null);
-        profilePicturePath = sharedPreferences.getString("imageFilePath", null);
-        if (profileName != null) tv_aboutYou_profileName.setText(profileName);
+        String profileName = sharedPreferences.getString("profileName", null);
+        String profilePicturePath = sharedPreferences.getString("imageFilePath", null);
+        if (isEmpty(profileName))
+        {
+            tv_aboutYou_profileName.setText(R.string.title_welcomeMsg_hiThere);
+        }
+        else
+        {
+            tv_aboutYou_profileName.setText(profileName);
+        }
     }
 
     private void setOnclickListeners()
@@ -87,7 +91,7 @@ public class Home extends Fragment
         });
         acb_help_appCrash.setOnClickListener(view ->
         {
-            // Open dialog with Crashlytics explanation and next steps
+            // TODO: Open dialog with Crashlytics explanation and next steps
         });
         acb_help_connectingAccounts.setOnClickListener(view ->
         {
@@ -95,5 +99,10 @@ public class Home extends Fragment
             startActivity(new Intent(Intent.ACTION_VIEW,
                     Uri.parse("https://github.com/ttomovcik/onefeed/wiki/connecting-accounts")));
         });
+    }
+
+    private static boolean isEmpty(CharSequence str)
+    {
+        return str == null || str.length() == 0;
     }
 }

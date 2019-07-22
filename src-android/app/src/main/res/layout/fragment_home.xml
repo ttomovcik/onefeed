@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorWindowBackground"
     tools:context=".Fragments.Home">
 
     <!-- Header -->
@@ -65,7 +66,7 @@
             android:layout_below="@id/tv_aboutYou_profileName"
             android:layout_alignStart="@id/tv_aboutYou_profileName"
             android:fontFamily="@font/poppins"
-            android:text="@string/subtitle_welcomeMsg_changeName"
+            android:text="&quot;Build a man a fire and he'll be warm for a day. Set a man on fire and he'll be warm for the rest of his life&quot;"
             android:textColor="@color/colorTextSecondary" />
     </RelativeLayout>
 
