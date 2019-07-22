@@ -52,14 +52,14 @@ public class QuickSettings extends Fragment
                         Objects.requireNonNull(getActivity()).getApplicationContext()));
         appTheme = sharedPreferences.getString("appTheme", "");
         String[] APP_THEMES_PRE_Q = {
+                getString(R.string.pref_appTheme_setByBatterySaver),
                 getString(R.string.pref_appTheme_light),
-                getString(R.string.pref_appTheme_dark),
-                getString(R.string.pref_appTheme_systemDefault)
+                getString(R.string.pref_appTheme_dark)
         };
         String[] APP_THEMES_Q = {
+                getString(R.string.pref_appTheme_systemDefault),
                 getString(R.string.pref_appTheme_light),
-                getString(R.string.pref_appTheme_dark),
-                getString(R.string.pref_appTheme_setByBatterySaver)
+                getString(R.string.pref_appTheme_dark)
         };
         ANDROID_API_VERSION = Build.VERSION.SDK_INT;
         APP_THEMES_TARGET = ANDROID_API_VERSION >= 29 ? APP_THEMES_Q : APP_THEMES_PRE_Q;
@@ -83,30 +83,34 @@ public class QuickSettings extends Fragment
         {
             case R.id.acb_appTheme:
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                builder.setTitle(getString(R.string.title_dialog_toggleSite));
+                builder.setTitle(getString(R.string.pref_title_item_appTheme));
                 builder.setItems(APP_THEMES_TARGET, (dialog, which) ->
                 {
                     switch (which)
                     {
-                        case 0: // Light theme
-                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                            editor.putInt(appTheme, 1);
-                            break;
-                        case 1: // Dark theme
-                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                            editor.putInt(appTheme, 2);
-                            break;
-                        case 2: // Set by battery saver or system default
+                        case 0: // Set by battery saver or system default
                             if (ANDROID_API_VERSION >= 29)
-                            {
-                                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY);
-                                editor.putInt(appTheme, 3);
-                            }
-                            else
                             {
                                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
                                 editor.putInt(appTheme, -1);
+                                editor.apply();
                             }
+                            else
+                            {
+                                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY);
+                                editor.putInt(appTheme, 3);
+                                editor.apply();
+                            }
+                            break;
+                        case 1: // Light theme
+                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                            editor.putInt(appTheme, 2);
+                            editor.apply();
+                            break;
+                        case 2: // Dark theme
+                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                            editor.putInt(appTheme, 2);
+                            editor.apply();
                             break;
                     }
                 });

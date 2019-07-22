@@ -1,36 +1,43 @@
-<androidx.preference.PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory app:title="@string/pref_title_cat_aboutYou">
         <EditTextPreference
-            app:icon="@drawable/ic_person_outline_black_24dp"
-            app:singleLine="true"
             app:dialogTitle="@string/pref_title_item_name_dialogTitle"
+            app:icon="@drawable/ic_person_outline_black_24dp"
             app:key="profileName"
+            app:singleLine="true"
             app:summary="@string/pref_desc_item_name"
             app:title="@string/pref_title_item_name" />
 
         <Preference
-            app:key="filePicker"
+            android:enabled="false"
             app:icon="@drawable/ic_tag_faces_black_24dp"
+            app:key="imageFilePath"
             app:summary="@string/pref_desc_item_image"
             app:title="@string/pref_title_item_image" />
     </PreferenceCategory>
 
     <PreferenceCategory app:title="@string/pref_title_cat_feed">
         <Preference
-            app:key="signIn"
+            android:enabled="false"
             app:icon="@drawable/ic_sync_black_24dp"
+            app:key="signIn"
             app:summary="@string/pref_desc_item_signIn"
             app:title="@string/pref_title_item_signIn" />
     </PreferenceCategory>
 
     <PreferenceCategory app:title="@string/pref_title_cat_application">
-        <ListPreference
-            app:defaultValue="1"
-            app:key="appTheme"
+        <Preference
             app:icon="@drawable/ic_color_lens_black_24dp"
+            app:key="appTheme"
             app:summary="@string/pref_desc_item_appTheme"
             app:title="@string/pref_title_item_appTheme" />
+        <Preference
+            app:icon="@drawable/ic_warning_black_24dp"
+            app:key="clearData"
+            app:summary="@string/pref_desc_item_clearData"
+            app:title="@string/pref_title_item_clearData" />
     </PreferenceCategory>
 
 </androidx.preference.PreferenceScreen>
