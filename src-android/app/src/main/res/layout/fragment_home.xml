@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorWindowBackground"
     tools:context=".Fragments.Home">
 
     <!-- Header -->
@@ -59,13 +60,13 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/tv_aboutYou_profileEmailAddress"
+            android:id="@+id/tv_aboutYou_profileHelpMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_aboutYou_profileName"
             android:layout_alignStart="@id/tv_aboutYou_profileName"
             android:fontFamily="@font/poppins"
-            android:text="@string/subtitle_welcomeMsg_changeName"
+            android:text="You are using an alpha version of OneFeed. Some features might not work as intended."
             android:textColor="@color/colorTextSecondary" />
     </RelativeLayout>
 
@@ -147,4 +148,105 @@
 
         </com.google.android.flexbox.FlexboxLayout>
     </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_improveOneFeed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_troubleshooting"
+        android:layout_marginTop="16dp"
+        android:paddingStart="16dp"
+        tools:ignore="RtlSymmetry">
+
+        <TextView
+            android:id="@+id/tv_titleImprovingOneFeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/title_cat_improvingOneFeed"
+            android:textColor="@color/colorTextSecondary" />
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/fl_improvingOneFeed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_titleImprovingOneFeed"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foregroundGravity="center_horizontal"
+            app:alignContent="center"
+            app:flexDirection="row"
+            app:flexWrap="wrap"
+            app:justifyContent="space_around">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/acb_improving_reportBugs"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:drawableTop="@drawable/ic_bug_report_black_24dp"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/colorIcons"
+                android:focusable="true"
+                android:text="@string/btn_improving_reportBugs"
+                android:textAllCaps="false"
+                android:textColor="@color/colorTextPrimary"
+                tools:targetApi="m" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/acb_improving_suggestFeature"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:drawableTop="@drawable/ic_lightbulb_outline_black_24dp"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/colorIcons"
+                android:focusable="true"
+                android:text="@string/btn_improving_suggestFeature"
+                android:textAllCaps="false"
+                android:textColor="@color/colorTextPrimary"
+                tools:targetApi="m" />
+        </com.google.android.flexbox.FlexboxLayout>
+    </RelativeLayout>
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        app:flexDirection="row"
+        app:justifyContent="center">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:contentDescription="@string/contentDescription_image"
+            android:src="@drawable/app_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:paddingBottom="8dp"
+            android:text="@string/app_version"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="10sp"
+            tools:ignore="SmallSp" />
+    </com.google.android.flexbox.FlexboxLayout>
 </RelativeLayout>

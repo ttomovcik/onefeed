@@ -1,10 +1,13 @@
 <resources>
     <string name="app_name">OneFeed</string>
+    <string name="app_version">0.1.0-alpha</string>
 
     <string name="btn_help_connectingAccounts">Accounts</string>
     <string name="btn_help_appCrash">App crashing</string>
     <string name="btn_help_help">Help</string>
     <string name="btn_settings_advanced">Advanced settings</string>
+    <string name="btn_improving_reportBugs">Report a problem</string>
+    <string name="btn_improving_suggestFeature">Suggest a feature</string>
     <string name="fab_title_switchSite">Switch site</string>
 
     <string name="contentDescription_image">Image</string>
@@ -17,14 +20,14 @@
     <string name="title_settings_more">More settings</string>
     <string name="title_cat_aboutYou">About you</string>
     <string name="title_cat_troubleshooting">Troubleshooting</string>
+    <string name="title_cat_improvingOneFeed">Improving OneFeed</string>
     <string name="title_welcomeMsg_hiThere">Hi there!</string>
 
     <string name="title_dialog_toggleSite">Switch sites</string>
-
-    <string name="subtitle_welcomeMsg_changeName">Tap here to change your profile settings</string>
     <string name="text_settings_quickSettingsInfo">Here you can quickly change basic settings like app theme. For more advanced stuff, tap the \'advanced settings\' button</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_settings">Settings</string>
+    <string name="text_toast_clearDataFinish">Application has been reset. Restarting in 5 seconds.</string>
 
     <!-- Preference Titles - categories -->
     <string name="pref_title_cat_aboutYou">About you</string>
@@ -37,16 +40,18 @@
     <string name="pref_title_item_name_dialogTitle">Hi, my name is</string>
     <string name="pref_title_item_image">Profile image</string>
     <string name="pref_title_item_appTheme">Application theme</string>
+    <string name="pref_title_item_clearData">Clear app data</string>
 
     <!-- Preference descriptions -->
     <string name="pref_desc_item_signIn">Sign in to enable sync and auto-login to social networks on other devices</string>
     <string name="pref_desc_item_name">What should we call you</string>
     <string name="pref_desc_item_image">Image will be displayed in home screen</string>
     <string name="pref_desc_item_appTheme">Toggle light / dark theme</string>
+    <string name="pref_desc_item_clearData">This will reset OneFeed to default settings and clear all stored data</string>
 
     <!-- Preference - theme -->
     <string name="pref_appTheme_light">Light</string>
     <string name="pref_appTheme_dark">Dark</string>
-    <string name="pref_appTheme_systemDefault">System default</string>
-    <string name="pref_appTheme_setByBatterySaver">Set by battery saver</string>
+    <string name="pref_appTheme_systemDefault">Follow system settings (default)</string>
+    <string name="pref_appTheme_setByBatterySaver">Set by battery saver (default)</string>
 </resources>
