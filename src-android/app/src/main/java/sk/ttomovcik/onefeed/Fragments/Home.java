@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,19 +18,16 @@ import androidx.preference.PreferenceManager;
 
 import java.util.Objects;
 
-import sk.ttomovcik.onefeed.Activities.Settings;
 import sk.ttomovcik.onefeed.R;
 
-@SuppressWarnings("ConstantConditions")
 public class Home extends Fragment
 {
     private AppCompatButton
             acb_help_help,
-            acb_help_appCrash,
-            acb_help_connectingAccounts;
-    private TextView
-            tv_aboutYou_profileName,
-            tv_aboutYou_profileHelpMessage;
+            acb_help_connectingAccounts,
+            acb_improve_bugReport,
+            acb_improve_suggestFeature;
+    private TextView tv_aboutYou_profileName;
     private SharedPreferences sharedPreferences;
 
     public Home()
@@ -45,14 +41,13 @@ public class Home extends Fragment
                              Bundle savedInstanceState)
     {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        sharedPreferences = PreferenceManager
-                .getDefaultSharedPreferences(Objects.requireNonNull(
-                        Objects.requireNonNull(getActivity()).getApplicationContext()));
-        acb_help_appCrash = view.findViewById(R.id.acb_help_appCrash);
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(Objects.requireNonNull(
+                Objects.requireNonNull(getActivity()).getApplicationContext()));
         acb_help_connectingAccounts = view.findViewById(R.id.acb_help_connectingAccounts);
         acb_help_help = view.findViewById(R.id.acb_help_help);
         tv_aboutYou_profileName = view.findViewById(R.id.tv_aboutYou_profileName);
-        tv_aboutYou_profileHelpMessage = view.findViewById(R.id.tv_aboutYou_profileHelpMessage);
+        acb_improve_bugReport = view.findViewById(R.id.acb_improving_reportBugs);
+        acb_improve_suggestFeature = view.findViewById(R.id.acb_improving_suggestFeature);
         ImageView iv_aboutYou_profilePicture = view.findViewById(R.id.iv_aboutYou_profilePicture);
         getProfileInformation();
         setOnclickListeners();
@@ -61,44 +56,22 @@ public class Home extends Fragment
 
     private void getProfileInformation()
     {
-        /*
-         *   If the user has saved name, change text from tap here to change settings to:
-         *   "idk, something". TODO: Add helpful message or QoTD.
-         */
         String profileName = sharedPreferences.getString("profileName", null);
         String profilePicturePath = sharedPreferences.getString("imageFilePath", null);
         if (isEmpty(profileName))
-        {
             tv_aboutYou_profileName.setText(R.string.title_welcomeMsg_hiThere);
-        }
         else
-        {
             tv_aboutYou_profileName.setText(profileName);
-        }
     }
 
     private void setOnclickListeners()
     {
-        tv_aboutYou_profileHelpMessage.setOnClickListener(view ->
-        {
-            startActivity(new Intent(getActivity(), Settings.class));
-        });
-        acb_help_help.setOnClickListener(view ->
-        {
-            // Open wiki on Github
-            startActivity(new Intent(Intent.ACTION_VIEW,
-                    Uri.parse("https://github.com/ttomovcik/onefeed/wiki")));
-        });
-        acb_help_appCrash.setOnClickListener(view ->
-        {
-            // TODO: Open dialog with Crashlytics explanation and next steps
-        });
-        acb_help_connectingAccounts.setOnClickListener(view ->
-        {
-            // Open wiki on Github
-            startActivity(new Intent(Intent.ACTION_VIEW,
-                    Uri.parse("https://github.com/ttomovcik/onefeed/wiki/connecting-accounts")));
-        });
+        View.OnClickListener openIssuesPage = view -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/ttomovcik/onefeed/issues")));
+        acb_help_connectingAccounts.setOnClickListener(view -> new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/ttomovcik/onefeed/wiki/connecting-accounts")));
+        acb_help_help.setOnClickListener(view -> new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/ttomovcik/onefeed/wiki")));
+        acb_improve_bugReport.setOnClickListener(openIssuesPage);
+        acb_improve_suggestFeature.setOnClickListener(openIssuesPage);
+
     }
 
     private static boolean isEmpty(CharSequence str)

@@ -20,6 +20,8 @@ import java.util.Objects;
 
 import sk.ttomovcik.onefeed.R;
 
+import static android.content.SharedPreferences.*;
+
 public class Settings extends AppCompatActivity
 {
     @Override
@@ -59,7 +61,7 @@ public class Settings extends AppCompatActivity
             String storedTheme;
             SharedPreferences sharedPreferences = PreferenceManager
                     .getDefaultSharedPreferences(Objects.requireNonNull(getContext()));
-            SharedPreferences.Editor editor = sharedPreferences.edit();
+            Editor editor = sharedPreferences.edit();
             String appTheme = sharedPreferences.getString("appTheme", "");
             String[] APP_THEMES_PRE_Q = {
                     getString(R.string.pref_appTheme_setByBatterySaver),
@@ -73,9 +75,6 @@ public class Settings extends AppCompatActivity
             };
             int ANDROID_API_VERSION = Build.VERSION.SDK_INT;
             String[] APP_THEMES_TARGET = ANDROID_API_VERSION >= 29 ? APP_THEMES_Q : APP_THEMES_PRE_Q;
-
-            Preference setProfileImage = findPreference("imageFilePath");
-            Preference signIn = findPreference("signIn");
             Preference changeTheme = findPreference("appTheme");
             Preference clearData = findPreference("clearData");
             Objects.requireNonNull(changeTheme).setOnPreferenceClickListener(preference ->
@@ -90,25 +89,21 @@ public class Settings extends AppCompatActivity
                             if (ANDROID_API_VERSION >= 29)
                             {
                                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
-                                editor.putInt(appTheme, -1);
-                                editor.apply();
+                                editor.putInt(appTheme, -1).apply();
                             }
                             else
                             {
                                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY);
-                                editor.putInt(appTheme, 3);
-                                editor.apply();
+                                editor.putInt(appTheme, 3).apply();
                             }
                             break;
                         case 1: // Light theme
                             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                            editor.putInt(appTheme, 2);
-                            editor.apply();
+                            editor.putInt(appTheme, 2).apply();
                             break;
                         case 2: // Dark theme
                             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                            editor.putInt(appTheme, 2);
-                            editor.apply();
+                            editor.putInt(appTheme, 2).apply();
                             break;
                     }
                 });

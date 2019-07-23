@@ -66,7 +66,7 @@
             android:layout_below="@id/tv_aboutYou_profileName"
             android:layout_alignStart="@id/tv_aboutYou_profileName"
             android:fontFamily="@font/poppins"
-            android:text="&quot;Build a man a fire and he'll be warm for a day. Set a man on fire and he'll be warm for the rest of his life&quot;"
+            android:text="You are using an alpha version of OneFeed. Some features might not work as intended."
             android:textColor="@color/colorTextSecondary" />
     </RelativeLayout>
 
@@ -146,6 +146,70 @@
                 android:textColor="@color/colorTextPrimary"
                 tools:targetApi="m" />
 
+        </com.google.android.flexbox.FlexboxLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_improveOneFeed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_troubleshooting"
+        android:layout_marginTop="16dp"
+        android:paddingStart="16dp"
+        tools:ignore="RtlSymmetry">
+
+        <TextView
+            android:id="@+id/tv_titleImprovingOneFeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/title_cat_improvingOneFeed"
+            android:textColor="@color/colorTextSecondary" />
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/fl_improvingOneFeed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_titleImprovingOneFeed"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foregroundGravity="center_horizontal"
+            app:alignContent="center"
+            app:flexDirection="row"
+            app:flexWrap="wrap"
+            app:justifyContent="space_around">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/acb_improving_reportBugs"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:drawableTop="@drawable/ic_bug_report_black_24dp"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/colorIcons"
+                android:focusable="true"
+                android:text="@string/btn_improving_reportBugs"
+                android:textAllCaps="false"
+                android:textColor="@color/colorTextPrimary"
+                tools:targetApi="m" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/acb_improving_suggestFeature"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:drawableTop="@drawable/ic_lightbulb_outline_black_24dp"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/colorIcons"
+                android:focusable="true"
+                android:text="@string/btn_improving_suggestFeature"
+                android:textAllCaps="false"
+                android:textColor="@color/colorTextPrimary"
+                tools:targetApi="m" />
         </com.google.android.flexbox.FlexboxLayout>
     </RelativeLayout>
 

@@ -1,11 +1,13 @@
 <resources>
     <string name="app_name">OneFeed</string>
-    <string name="app_version">0.1.1-alpha</string>
+    <string name="app_version">0.1.0-alpha</string>
 
     <string name="btn_help_connectingAccounts">Accounts</string>
     <string name="btn_help_appCrash">App crashing</string>
     <string name="btn_help_help">Help</string>
     <string name="btn_settings_advanced">Advanced settings</string>
+    <string name="btn_improving_reportBugs">Report a problem</string>
+    <string name="btn_improving_suggestFeature">Suggest a feature</string>
     <string name="fab_title_switchSite">Switch site</string>
 
     <string name="contentDescription_image">Image</string>
@@ -18,6 +20,7 @@
     <string name="title_settings_more">More settings</string>
     <string name="title_cat_aboutYou">About you</string>
     <string name="title_cat_troubleshooting">Troubleshooting</string>
+    <string name="title_cat_improvingOneFeed">Improving OneFeed</string>
     <string name="title_welcomeMsg_hiThere">Hi there!</string>
 
     <string name="title_dialog_toggleSite">Switch sites</string>

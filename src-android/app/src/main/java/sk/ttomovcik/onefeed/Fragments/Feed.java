@@ -1,8 +1,10 @@
 package sk.ttomovcik.onefeed.Fragments;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.res.Configuration;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,7 +39,7 @@ public class Feed extends Fragment
             };
     private String[] socialNetworkUrls =
             {
-                    "https://www.boards.4chan.org/",
+                    "https://www.4chan.org/",
                     "https://www.facebook.com/",
                     "https://www.instagram.com/",
                     "https://www.pinterest.com/",
@@ -59,36 +61,28 @@ public class Feed extends Fragment
                              Bundle savedInstanceState)
     {
         View view = inflater.inflate(R.layout.fragment_feed, container, false);
-
-        int nightModeFlags = Objects.requireNonNull(getContext())
-                .getResources()
-                .getConfiguration()
-                .uiMode &
-                Configuration.UI_MODE_NIGHT_MASK;
-
-        // Find views
+        int nightModeFlags = Objects.requireNonNull(getContext()).getResources().getConfiguration()
+                .uiMode & Configuration.UI_MODE_NIGHT_MASK;
         wv_feed = view.findViewById(R.id.wv_feed);
         FloatingActionButton fab_toggleSite = view.findViewById(R.id.fab_toggleSite);
         final TextView tv_title = view.findViewById(R.id.tv_title);
         tv_title.setText(getString(R.string.title_feed));
-
-        // Prepare webView
         wv_feed.getSettings().setDomStorageEnabled(true);
         wv_feed.getSettings().setDatabaseEnabled(true);
         wv_feed.getSettings().setJavaScriptEnabled(true);
         CookieManager.getInstance().setAcceptThirdPartyCookies(wv_feed, true);
-        wv_feed.setWebViewClient(new WebViewClient()
-        {
-            public void onPageFinished(WebView view, String url)
-            {
-                wv_feed.setVisibility(View.VISIBLE);
-            }
-        });
         if (nightModeFlags == Configuration.UI_MODE_NIGHT_YES)
         {
             wv_feed.loadData("<html><body bgcolor=\"black\"></body></html>",
                     "text/html", "UTF-8");
         }
+        wv_feed.setWebViewClient(new WebViewClient()
+        {
+            public void onPageFinished(WebView view12, String url)
+            {
+                wv_feed.setVisibility(View.VISIBLE);
+            }
+        });
         setRetainInstance(true);
 
         fab_toggleSite.setOnClickListener(view1 ->
@@ -137,28 +131,5 @@ public class Feed extends Fragment
             dialog.show();
         });
         return view;
-    }
-
-    /**
-     * @param url   Target website to get stored cookies fom
-     * @param cName Target cookie name
-     * @return String -> value of target cookie
-     */
-    public String getCookie(String url, String cName)
-    {
-        CookieManager cookieManager = CookieManager.getInstance();
-        String cookies = cookieManager.getCookie(url);
-        String CookieValue = null;
-        String[] sTemp = cookies.split(";");
-        for (String cStr : sTemp)
-        {
-            if (cStr.contains(cName))
-            {
-                String[] temp1 = cStr.split("=");
-                CookieValue = temp1[1];
-                break;
-            }
-        }
-        return CookieValue;
     }
 }

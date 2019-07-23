@@ -46,7 +46,6 @@ public class QuickSettings extends Fragment
     {
         View view = inflater.inflate(R.layout.fragment_quick_settings,
                 container, false);
-
         sharedPreferences = PreferenceManager
                 .getDefaultSharedPreferences(Objects.requireNonNull(
                         Objects.requireNonNull(getActivity()).getApplicationContext()));
@@ -63,11 +62,9 @@ public class QuickSettings extends Fragment
         };
         ANDROID_API_VERSION = Build.VERSION.SDK_INT;
         APP_THEMES_TARGET = ANDROID_API_VERSION >= 29 ? APP_THEMES_Q : APP_THEMES_PRE_Q;
-
         AppCompatButton acb_appTheme = view.findViewById(R.id.acb_appTheme);
         AppCompatButton acb_help = view.findViewById(R.id.acb_help);
         MaterialButton btn_advancedSettings = view.findViewById(R.id.btn_advancedSettings);
-
         acb_appTheme.setOnClickListener(this);
         acb_help.setOnClickListener(this);
         btn_advancedSettings.setOnClickListener(this);
@@ -92,25 +89,21 @@ public class QuickSettings extends Fragment
                             if (ANDROID_API_VERSION >= 29)
                             {
                                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
-                                editor.putInt(appTheme, -1);
-                                editor.apply();
+                                editor.putInt(appTheme, -1).apply();
                             }
                             else
                             {
                                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY);
-                                editor.putInt(appTheme, 3);
-                                editor.apply();
+                                editor.putInt(appTheme, 3).apply();
                             }
                             break;
                         case 1: // Light theme
                             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                            editor.putInt(appTheme, 2);
-                            editor.apply();
+                            editor.putInt(appTheme, 2).apply();
                             break;
                         case 2: // Dark theme
                             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                            editor.putInt(appTheme, 2);
-                            editor.apply();
+                            editor.putInt(appTheme, 2).apply();
                             break;
                     }
                 });
@@ -118,8 +111,7 @@ public class QuickSettings extends Fragment
                 dialog.show();
                 break;
             case R.id.acb_help:
-                startActivity(new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("https://github.com/ttomovcik/onefeed/wiki/")));
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/ttomovcik/onefeed/wiki/")));
                 break;
             case R.id.btn_advancedSettings:
                 startActivity(new Intent(getActivity(), Settings.class));
