@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/switch_site"
+        android:icon="@drawable/ic_swap_horiz_white_24dp"
+        android:title="@string/text_switch_site"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/open_settings"
+        android:icon="@drawable/ic_palette_white_24dp"
+        app:showAsAction="always"
+        android:title="@string/pref_title_item_appTheme" />
+</menu>

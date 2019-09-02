@@ -2,14 +2,8 @@
 <resources>
     <color name="colorPrimary">#03A9F4</color>
     <color name="colorPrimaryDark">#0288D1</color>
-    <color name="colorPrimaryLight">#B3E5FC</color>
-    <color name="colorAccent">#FF4081</color> <!-- Not used pretty much -->
-
-    <!-- Text, dividers, icons -->
-    <color name="colorTextPrimary">#FAFAFA</color>
-    <color name="colorTextSecondary">#757575</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorToolbar">#000000</color>
+    <color name="colorToolbarText">#FAFAFA</color>
     <color name="colorWindowBackground">#000000</color>
-    <color name="colorDividers">#BDBDBD</color>
-    <color name="colorIcons">#FFFFFF</color>
-    <color name="colorFabIcon">#ECECEC</color>
 </resources>
